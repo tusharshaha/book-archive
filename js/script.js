@@ -47,10 +47,10 @@ const displayBooks = data => {
             <div class="card h-100">
                 <img src="${imgUrl ? imgUrl:''}" height="300px" class="card-img-top " alt="...">
                 <div class="card-body">
-                    <small class="fw-bold">Book Name: <span class="text-info">${book.title}</span></small><br>
-                    <small>Author Name: <span class="text-info">${book.author_name}</span></small><br>
-                    <small>Publisher: <span class="text-info">${book.publisher}</span></small><br>
-                    <small>First Publish Year: <span class="text-info">${book.first_publish_year}</span></small>
+                    <small class="fw-bold">Book Name: <span class="text-info">${book.title ? book.title:'Not Available'}</span></small><br>
+                    <small>Author Name: <span class="text-info">${book.author_name ? book.author_name:'Not Available'}</span></small><br>
+                    <small>Publisher: <span class="text-info">${book.publisher ? book.publisher:'Not Available'}</span></small><br>
+                    <small>First Publish Year: <span class="text-info">${book.first_publish_year ? book.first_publish_year:'Not Available'}</span></small>
                 </div>
             </div>
         `
