@@ -3,12 +3,12 @@ const resultArea = document.getElementById('result-area');
 // error message
 const errorMessage = error =>{
     const div = document.createElement('div');
-    div.classList.add('mx-auto', 'w-50')
+    div.classList.add('mx-auto', 'w-75')
     if(error === 'empty'){
-        div.innerHTML = `<h2  class=" text-warning">Search Field Can not be Empty</h2`;
+        div.innerHTML = `<h2  class=" text-center bg-warning text-white">Search Field Can not be Empty</h2`;
         resultArea.appendChild(div);
     }else{
-        div.innerHTML = `<h2  class="text-center text-warning">No Result Found</h2`
+        div.innerHTML = `<h2  class="text-center text-white bg-warning">No Result Found</h2`
         resultArea.appendChild(div);
     }
 }
@@ -40,14 +40,14 @@ const displayBooks = data => {
         document.getElementById('spinner').classList.add('d-none')
     }
     result.forEach(book => {
-        const imgUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
+        const imgUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
             <div class="card h-100">
-                <img src="${imgUrl ? imgUrl:''}" class="card-img-top img-fluid" alt="...">
+                <img src="${imgUrl ? imgUrl:''}" height="300px" class="card-img-top " alt="...">
                 <div class="card-body">
-                    <small>Book Name: <span class="text-info">${book.title}</span></small><br>
+                    <small class="fw-bold">Book Name: <span class="text-info">${book.title}</span></small><br>
                     <small>Author Name: <span class="text-info">${book.author_name}</span></small><br>
                     <small>Publisher: <span class="text-info">${book.publisher}</span></small><br>
                     <small>First Publish Year: <span class="text-info">${book.first_publish_year}</span></small>
